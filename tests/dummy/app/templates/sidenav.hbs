@@ -1,7 +1,7 @@
 {{#paper-toolbar}}
   <div class="md-toolbar-tools">
     {{#paper-sidenav-toggle as |toggle|}}
-      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon icon="menu"}}{{/paper-button}}
+      {{#paper-button onClick=(action "toggleMenu" target=toggle) iconButton=true}}{{paper-icon "menu"}}{{/paper-button}}
     {{/paper-sidenav-toggle}}
     <span class="md-breadcrumb-page">Sidenav</span>
   </div>
@@ -25,6 +25,11 @@
       Defaults to <code>true</code>.
     </p>
 
+    <p>
+      <strong>Note:</strong> The following Sidenav example contains a <code>transition-to</code> helper that is not installed by default. To use this helper install the following:
+      {{#code-block language='bash'}}ember install ember-route-action{{/code-block}}
+    </p>
+
 
     <h3>Template</h3>
 
@@ -42,8 +47,8 @@
 
     \{{#paper-content}}
       \{{#paper-list}}
-        \{{#paper-item action="transitionTo" param="index"}}Introduction\{{/paper-item}}
-        \{{#paper-item action="transitionTo" param="index"}}Another link\{{/paper-item}}
+        \{{#paper-item onClick=(transition-to "index")}}Introduction\{{/paper-item}}
+        \{{#paper-item onClick=(transition-to "index")}}Another link\{{/paper-item}}
       \{{/paper-list}}
     \{{/paper-content}}
   \{{/paper-sidenav}}
@@ -52,7 +57,7 @@
     \{{#paper-toolbar}}
       &lt;div class="md-toolbar-tools"&gt;
         \{{#paper-sidenav-toggle as |toggle|}}
-          \{{#paper-button target=toggle action="toggleMenu" icon-button=true}}\{{paper-icon icon="menu"}}\{{/paper-button}}
+          \{{#paper-button onClick=(action "toggleMenu" target=toggle) iconButton=true}}\{{paper-icon "menu"}}\{{/paper-button}}
         \{{/paper-sidenav-toggle}}
         &lt;span class="md-breadcrumb-page"&gt;Title&lt;/span&gt;
       &lt;/div&gt;

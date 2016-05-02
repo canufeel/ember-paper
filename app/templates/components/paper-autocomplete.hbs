@@ -7,6 +7,7 @@
       focus-out="inputFocusOut"
       key-down="inputKeyDown"
       value=searchText
+      onChange=(action (mut searchText))
       disabled=disabled
       required=required
       flex=true}}
@@ -27,8 +28,8 @@
       aria-expanded=notHidden}}
 
     {{#if enableClearButton}}
-      {{#paper-button icon-button=true themed=false action="clear"}}
-        {{paper-icon icon="close"}}
+      {{#paper-button iconButton=true themed=false onClick=(action "clear")}}
+        {{paper-icon "close"}}
       {{/paper-button}}
     {{/if}}
 

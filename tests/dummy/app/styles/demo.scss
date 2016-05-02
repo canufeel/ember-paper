@@ -155,6 +155,30 @@ ul li:first-child {
   margin: 16px;
 }
 
+.doc-code-example {
+  /* Initially we don't want any height, and we want the contents to be hidden */
+  max-height: 0;
+  overflow: hidden;
+
+  /* Set our transitions up. */
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  transition: max-height 1s;
+
+  /* On hover, set the max-height to something large. In this case there's an obvious limit. */
+  &.is-visible {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  pre {
+    margin-top: 0;
+  }
+}
+
+.doc-content-example {
+  position: relative;
+}
+
 .list-demo .face {
   border-radius: 30px;
   border: 1px solid #ddd;
@@ -167,10 +191,6 @@ ul li:first-child {
   margin-bottom: 10px;
 }
 
-.icon-demo md-icon {
-  font-size: 24px;
-  margin: 16px;
-}
 
 .icon-demo .icon-tile {
   float: left;
@@ -219,6 +239,14 @@ code.paper {
 
   md-grid-tile {
     transition: all 400ms ease-out 50ms;
+  }
+}
+
+.card-demo {
+  .card-media {
+    background-color: #999999;
+    height: 100%;
+    width: 100%;
   }
 }
 
